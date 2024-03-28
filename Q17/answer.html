@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function skip(value){
+            const vid = document.getElementById("video");
+            vid.currentTime += value;
+        }
+
+        function switchVideo(){
+            const source = document.getElementById("source");
+            
+            source.setAttribute('src', './videoplayback.mp4');
+            
+            const vid = document.getElementById("video");
+            vid.load(); // Reload the video after switching source
+        }
+    </script>
+    <video controls id="video">
+        <source id="source" src="./GOGETA VS BROLY __ Full Fight __ 4k 60fps.mp4">
+    </video>
+    <br>
+    <button onclick="skip(10)">Forward</button>
+    <button onclick="skip(-10)">Rewind</button>
+    <button onclick="switchVideo()">Switch</button>
+</body>
+</html>

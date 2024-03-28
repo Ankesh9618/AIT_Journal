@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Element</title>
+    <script>
+        
+        
+
+        function forward(){
+            const vid = document.getElementById("vid");
+            vid.currentTime+=10;
+        }
+
+        function rewind(){
+            const vid = document.getElementById("vid");
+            vid.currentTime-=10;
+        }
+
+        function pl(){
+            const vid = document.getElementById("vid");
+            const p = document.getElementById("play");
+            if (vid.paused){
+                vid.play();
+                p.textContent = "||";
+            }
+            else{
+                vid.pause();
+                p.textContent =">";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="video">
+        <video src="./videoplayback.mp4" id="vid"></video>
+        <br>
+        <button id="play" onclick="pl()">></button>
+        <button id="Forward" onclick="forward()">Forward</button>
+        <button id="Rewind" onclick="rewind()">Rewind</button>
+    </div>
+</body>
+</html>
